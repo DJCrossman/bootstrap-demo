@@ -6,66 +6,39 @@ head
   // Bootstrap CSS
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
   link(rel='stylesheet' href='pricing.css')
-  title Pricing
+  title Coding Problems
 body
   .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
-    h5.my-0.mr-md-auto.font-weight-normal David Crossman
+    h5.my-0.mr-md-auto.font-weight-normal ComIT
     nav.my-2.my-md-0.mr-md-3
-      a.p-2.text-dark(href='#') Features
-      a.p-2.text-dark(href='#') Enterprise
-      a.p-2.text-dark(href='#') Support
-      a.p-2.text-dark(href='#') Pricing
-    a.btn.btn-outline-primary(href='#') Sign up
+      a.p-2.text-dark(href='http://www.comit.org/') Home
+      a.p-2.text-dark(href='#') Contribute
+    a.btn.btn-outline-primary(href='https://github.com/DJCrossman/bootstrap-demo') Contribute
   .pricing-header.px-3.py-3.pt-md-5.pb-md-4.mx-auto.text-center
-    h1.display-4 Pricing
+    h1.display-4 Coding Problems
     p.lead
-      | Quickly build an effective pricing table for your potential customers with this Bootstrap example. It&rsquo;s built with default Bootstrap components and utilities with little customization.
+      | A quick little activity to practice collaborating in large teams.
   .container
     .card-deck.mb-3.text-center
-      .card.mb-4.shadow-sm
-        .card-header
-          h4.my-0.font-weight-normal Free
-        .card-body
-          h1.card-title.pricing-card-title
-            | $0 
-            small.text-muted / mo
-          ul.list-unstyled.mt-3.mb-4
-            li 10 users included
-            li 2 GB of storage
-            li Email support
-            li Help center access
-          button.btn.btn-lg.btn-block.btn-outline-primary(type='button') Sign up for free
-      .card.mb-4.shadow-sm
-        .card-header
-          h4.my-0.font-weight-normal Pro
-        .card-body
-          h1.card-title.pricing-card-title
-            | $15 
-            small.text-muted / mo
-          ul.list-unstyled.mt-3.mb-4
-            li 20 users included
-            li 10 GB of storage
-            li Priority email support
-            li Help center access
-          button.btn.btn-lg.btn-block.btn-primary(type='button') Get started
-      .card.mb-4.shadow-sm
-        .card-header
-          h4.my-0.font-weight-normal Enterprise
-        .card-body
-          h1.card-title.pricing-card-title
-            | $29 
-            small.text-muted / mo
-          ul.list-unstyled.mt-3.mb-4
-            li 30 users included
-            li 15 GB of storage
-            li Phone and email support
-            li Help center access
-          button.btn.btn-lg.btn-block.btn-primary(type='button') Contact us
+      each problem in problems
+        .card.mb-4.shadow-sm
+          .card-header
+            h4.my-0.font-weight-normal=problem.name
+          .card-body
+            h1.card-title.pricing-card-title
+              if problem.passed
+                = '✔'
+              else
+                = '𐄂'
+            ul.list-unstyled.mt-3.mb-4
+              each test in problem.tests
+                li=''+problem.method+'('+test.value+') === '+test.answer+''
+            a.btn.btn-lg.btn-block.btn-outline-primary(href=problem.link) View Problem
     footer.pt-4.my-md-5.pt-md-5.border-top
       .row
         .col-12.col-md
           img.mb-2(src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='24' height='24')
-          small.d-block.mb-3.text-muted &copy; 2017-{{ site.time | date: &quot;%Y&quot; }}
+          small.d-block.mb-3.text-muted &copy; 2019
         .col-6.col-md
           h5 Features
           ul.list-unstyled.text-small
