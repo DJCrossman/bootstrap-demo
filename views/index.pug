@@ -27,12 +27,12 @@ body
           .card-body
             h1.card-title.pricing-card-title
               if problem.passed
-                = '✔'
+                = ''
               else
                 = '𐄂'
             ul.list-unstyled.mt-3.mb-4
               each test in problem.tests
-                li=''+problem.method+'('+test.value+') === '+test.answer+''
+                li=''+problem.method+'('+test.value1+','+test.value2+') === '+test.answer+''
             a.btn.btn-lg.btn-block.btn-outline-primary(href=problem.link) View Problem
     footer.pt-4.my-md-5.pt-md-5.border-top
       .row
