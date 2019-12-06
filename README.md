@@ -4,7 +4,7 @@ This is a practice example project to show top collaboration. We will give 15 mi
 
 
 - [x] [Grasshopper - Summation](https://www.codewars.com/kata/grasshopper-summation)
-- [ ] [Power](https://www.codewars.com/kata/562926c855ca9fdc4800005b)
+- [x] [Power](https://www.codewars.com/kata/562926c855ca9fdc4800005b)
 - [ ] [Training JS #14: Methods of Number object--toString() and toLocaleString()](https://www.codewars.com/kata/57238ceaef9008adc7000603)
 - [ ] [SpeedCode #2 - Array Madness](https://www.codewars.com/kata/56ff6a70e1a63ccdfa0001b1)
 - [ ] [Simple Comparison? ](https://www.codewars.com/kata/57f6ecdfcca6e045d2001207)
